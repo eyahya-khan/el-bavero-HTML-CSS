@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {margin: 0;padding: 0;box-sizing: border-box;}
+.allinone {font:22px/150% 'Roboto', Helvetica, sans-serif;overflow-x: hidden;}
+/* Hide the checkbox */
+input[type=checkbox] {position: fixed;visibility: hidden;}
+/* start toggle */
+.nav-alter {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 0px;
+    height: 32px;
+    width: 40px;
+    cursor: pointer;
+    z-index: 99;
+    margin-right: 10px;
+    transition: margin .3s;}
+.nav-alter span {
+    position: relative;
+    display: block;
+    height: 2px;
+    width: 30px;
+    background: #000;
+    transition: all .3s;
+    background-color: #ce0e5f;}
+.nav-alter span:nth-child(2) {top: 12px;}
+.nav-alter span:nth-child(3) {top: 24px;}
+/*moving toggle */
+input[type=checkbox]:checked ~ .nav-alter {margin-right: 290px;}
+input[type=checkbox]:checked ~ .nav-alter span:nth-child(1) {top: 15px;
+    transform: scale(0.5) rotate(-45deg);}
+input[type=checkbox]:checked ~ .nav-alter span:nth-child(2) {display: none;}
+input[type=checkbox]:checked ~ .nav-alter span:nth-child(3) {top: 13px;
+    transform: scale(0.5) rotate(45deg);}
+/*end toggle */
+.container {
+    position: fixed;
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+    margin-left: 0;
+    background-color: #ffffff;
+    transition: margin .3s;
+    left: 0;}
+header {position:absolute;z-index: 77;margin: 30px;}
+.menu {
+    position: fixed;
+    top: 0;
+    background-repeat: no-repeat;
+    margin-left: -233px;
+    background: #222;
+    padding: 10px;
+    transition: margin .3s;}
+/*menu moving*/
+input[type=checkbox]:checked ~ .container .menu {margin-left: 0;
+    background-color: rgb(0, 0, 0, 0.4);}
+/*section moving*/
+input[type=checkbox]:checked ~ .container section {margin-left: 0;}
+input[type=checkbox]:checked ~ .container header {
+    margin-top: 180px;
+    margin-left: 150px;
+    width: 50%;
+}
+/* The menu */
+ul {list-style: none;margin-top: 15px;}
+nav.menu ul ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s;}
+nav.menu ul li:hover > ul {max-height: 600px;height: auto;}
+a {text-decoration: none;display: block;color: #ffffff;}
+/*start adding pseudo element*/
+li a::after {
+    content: ' ..';
+    transition: .2s;
+    display: inline-block;
+    margin-left: 5px}
+li a:hover::after {content: ' ..';transform: rotate(45deg);}
+li a:only-child::after {content: '';}
+/*end adding pseudo element*/
+/*start social icon*/
+.icon-bar {
+  position: fixed;
+  top: 53%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);}
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;}
+.icon-bar a:hover {background-color: #000;}
+.facebook {background: #3B5998;color: white;}
+.twitter {background: #55ACEE;color: white;}
+/*end social icon*/
+p {text-align: center;font-family:verdana; font-size: 14px;color: #000;
+padding: 60px;}
+/*start image gallery*/
+.imagegallery {margin: 50px;}
+.box {
+    display: block;
+    float: left;
+    width: 25%;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 10px;}
+img {width: 100%;border-radius: 10px;}
+div .box img:hover {
+    transform: scale(2, 2);
+    transition: 1s transform;
+    border-radius: 10px;}
+/*end image gallery*/
+/*start section*/
+section{
+    width: 100%;height: 100%;margin: 0 auto;}
+#home {width: 100%;}
+.bgimage{width: 100%;margin: 0;padding: 0;z-index: 10;}
+.bgimage img{border-radius: 0;}
+#about {
+    background-color: #ffffff;width: 100%;height: 130vh;}
+#jps {background-color: #ffffff;width: 100%;}
+strong{color: #ffffff;}
+#shirts {background-color: #ffffff;width: 100%;}
+#shirts p{text-align: center;color:#000;}
+#accessories{background-color: #ffffff;width: 100%;}
+#accessories p{text-align: center;color: #000;}
+/*start contact form*/
+#contact {
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center;
+    line-height: 27px;}
+#contact a {text-align: center;color: #3b2caa;}
+address{color: #386d6d;text-align: center;padding: 60px;}
+mark{background-color: #a88454;}
+.contact-form {width: 50%;margin: 0 auto;}
+.position1 {
+    display: block;
+    text-align: left;
+    color: #000000;
+    font-size: 18px;}
+input {
+    font-size: 18px;
+    color: #151314;
+    border-radius: 5px;
+    border-width: 1px;}
+input[type="text"] {
+    width: 100%;
+    text-align: left;
+    color: #151314;}
+input[type="email"] {
+    width: 100%;
+    text-align: left;
+    color: #151314;}
+input[type="submit"] {
+    width: 80px;
+    text-align: center;
+    color: #151314;
+    background-color: #7fffd4;}
+textarea {width: 100%;font-size: 18px; }
+/* end contact form*/
+/*start slide show*/
+.mySlides1, .mySlides2, mySlides3{display: none;}
+img {vertical-align: middle;width:100%;}
+/*Slideshow container*/
+.slideshow-container {width: 40%;position: relative;margin:0 auto;}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 22px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;}
+/* Position the "next button" to the right */
+.next {right: 0;border-radius: 3px 0 0 3px;}
+/* On hover, add background color */
+.prev:hover, .next:hover {
+  background-color: #085325;
+  color: #d41717;}
+/* Caption text */
+.text {
+  color: #ad0b0b;
+  font-size: 15px;
+  padding: 0 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #ad0b0b;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0;}
+/*end slide show*/
+footer{
+    width: 100%;
+    height: 70px;
+    background-color:#5a5757;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    padding-top: 35px;
+}
+
+/*start mediaquery*/
+@media only screen and (min-width:800px) {
+    
+.nav-alter {display: none;}
+        
+    .container {
+        top: 0;
+        background-color: #21212;
+        background-size: cover;
+        line-height: 20px;
+        color: #000;
+        word-wrap: break-word !important;
+        z-index: 10;}
+    nav.menu {
+        z-index: 99;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        background: none;
+        margin-left: 0;
+        padding: 0;
+        height: auto;}
+    nav.menu ul {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        list-style: none;}
+    nav.menu ul li {
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.4);
+        width: auto;
+        position: relative;
+        margin-left: -5px;}
+    nav.menu a {
+        display: block;
+        padding: 0 10px;
+        color: #FFF;
+        font-size: 16px;
+        line-height: 60px;
+        text-decoration: none;}
+    nav.menu a:hover {background-color: #000000;}
+    /* keeps the dropdown invisible and assign style to list*/
+    nav.menu ul ul {
+        display: none;
+        position: absolute;
+        overflow: visible;
+        top: 60px;
+        margin-left: -80px;}
+    /* show dropdown 1st 2nd level on hover */
+    nav.menu ul li:hover > ul {display: inherit;}
+    /* 1st level */
+    nav.menu ul ul li {display: list-item;float: none; position: relative;}
+input[type=checkbox]:checked ~ .container section {margin-left: 0;}
+
+}
